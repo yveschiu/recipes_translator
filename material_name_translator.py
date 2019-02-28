@@ -3,11 +3,13 @@ import time
 from googletrans import Translator
 
 
-with open("recipes.pkl","rb") as pkl:
+with open("recipes.pkl", "rb") as pkl:
     recipes_list = pickle.load(pkl)
 
 
 translator = Translator()
+
+
 def translate_ch_to_en(material_name):
     return translator.translate(material_name).text
 
@@ -26,9 +28,7 @@ for recipe_num, recipe in enumerate(recipes_list):
             print("{} translation is failed".format(err_msg))
             err_list.append(err_msg)
 
-        time.sleep(0.005)
-
-
+        time.sleep(0.01)
 
 # pickle a variable to a file
 file = open('translated_recipes.pkl', 'wb')
