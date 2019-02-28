@@ -28,7 +28,7 @@ for recipe_num, recipe in enumerate(recipes_list):
             print("{} translation is failed".format(err_msg))
             err_list.append(err_msg)
 
-        time.sleep(0.01)
+        time.sleep(0.05)
 
 # pickle a variable to a file
 file = open('translated_recipes.pkl', 'wb')
